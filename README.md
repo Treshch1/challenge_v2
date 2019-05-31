@@ -12,5 +12,5 @@ docker-compose build
 
 4) Run tests by execution next bash command.
 ```bash
-docker-compose run -rm qa
+docker-compose run --rm qa
 ```
