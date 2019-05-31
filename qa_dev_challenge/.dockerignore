@@ -1,0 +1,15 @@
+.DS_Store
+.editorconfig
+.gitignore
+
+# Pytest
+.pytest_cache/
+
+# Git
+.git/
+
+# Server
+*.pyc
+**/__pycache__
+
+*.log
