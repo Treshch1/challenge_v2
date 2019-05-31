@@ -1,3 +1,10 @@
+import os
+
+
+WILDFLY_HOST = os.environ.get('WILDFLY_HOST', 'localhost')
+
+
+
 class MainPage:
     
     article_xpath = '//span[.="Article"]'
@@ -23,4 +30,4 @@ class MainPage:
     
 
     def visit(self):
-        self.browser.get('http://wildfly:8080/article/faces/welcome.xhtml')
+        self.browser.get(f'http://{WILDFLY_HOST}:8080/article/faces/welcome.xhtml')

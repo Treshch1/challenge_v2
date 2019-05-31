@@ -2,8 +2,6 @@ version: "3.6"
 services:
   wildfly:
     build: ./wildfly-16.0.0.Final
-    environment:
-      JBOSS_HOST: 0.0.0.0
     command:
       - "/bin/bash"
       - "/src/bin/standalone.sh"
@@ -13,8 +11,9 @@ services:
     ports:
       - '127.0.0.1:8080:8080' 
   qa:
+    environment:
+      WILDFLY_HOST: wildfly
     build: ./qa_dev_challenge/qa
     command: ./wait-for wildfly:8080 -- pytest
     depends_on:
       - wildfly
-

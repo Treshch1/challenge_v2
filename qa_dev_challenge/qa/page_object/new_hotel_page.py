@@ -1,3 +1,8 @@
+import os
+
+WILDFLY_HOST = os.environ.get('WILDFLY_HOST', 'localhost')
+
+
 class NewHotelPage:
     
     title_xpath = '//h2[.="Register new Hotel"]'
@@ -149,5 +154,5 @@ class NewHotelPage:
         return self.browser.find_element_by_xpath(self.notes_input_xpath)
 
     def visit(self):
-        self.browser.get('http://wildfly:8080/article/faces/hotel.xhtml')
+        self.browser.get(f'http://{WILDFLY_HOST}:8080/article/faces/hotel.xhtml')
     

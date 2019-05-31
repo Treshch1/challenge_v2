@@ -202,7 +202,3 @@ def test_empty_notes_5_stars(browser):
 	wait_presense_xpath(browser, '//td')
 	hotel_name_element = browser.find_elements_by_xpath('//td')[-6]
 	assert hotel_name_element.text == alphanumeric_value
-
-
-
-
